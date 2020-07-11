@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomCameras : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
         GetComponent<ExecuteOnEnable>().AddMethodsToExecute(InitializeCamera);
     }
