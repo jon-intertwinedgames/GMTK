@@ -10,7 +10,18 @@ public class Jerry : MonoBehaviour
     [SerializeField]
     private float normalSpeed = 5, runningSpeed = 8;
 
-    public Direction direction = Direction.Up;
+    private Direction direction = Direction.Up;
+    public Direction DirectionProp {
+        get => direction;
+
+        set {
+            if( direction != value) {
+                direction = value;
+
+                transform.rotation = Quaternion.Euler(0, 0, (int)direction * 90);
+            }
+        }
+    }
 
     void Awake()
     {
@@ -29,16 +40,16 @@ public class Jerry : MonoBehaviour
             case "l":
                 switch( this.direction ) {
                     case Direction.Up:
-                        this.direction = Direction.Left;
+                        DirectionProp = Direction.Left;
                         break;
                     case Direction.Left:
-                        this.direction = Direction.Down;
+                        DirectionProp = Direction.Down;
                         break;
                     case Direction.Down:
-                        this.direction = Direction.Right;
+                        DirectionProp = Direction.Right;
                         break;
                     default:
-                        this.direction = Direction.Up;
+                        DirectionProp = Direction.Up;
                         break;
                 }
                 break;
@@ -47,16 +58,16 @@ public class Jerry : MonoBehaviour
                 switch (this.direction)
                 {
                     case Direction.Up:
-                        this.direction = Direction.Right;
+                        DirectionProp = Direction.Right;
                         break;
                     case Direction.Left:
-                        this.direction = Direction.Up;
+                        DirectionProp = Direction.Up;
                         break;
                     case Direction.Down:
-                        this.direction = Direction.Left;
+                        DirectionProp = Direction.Left;
                         break;
                     default:
-                        this.direction = Direction.Down;
+                        DirectionProp = Direction.Down;
                         break;
                 }
                 break;
@@ -65,16 +76,16 @@ public class Jerry : MonoBehaviour
                 switch (this.direction)
                 {
                     case Direction.Up:
-                        this.direction = Direction.Down;
+                        DirectionProp = Direction.Down;
                         break;
                     case Direction.Left:
-                        this.direction = Direction.Right;
+                        DirectionProp = Direction.Right;
                         break;
                     case Direction.Down:
-                        this.direction = Direction.Up;
+                        DirectionProp = Direction.Up;
                         break;
                     default:
-                        this.direction = Direction.Left;
+                        DirectionProp = Direction.Left;
                         break;
                 }
                 break;
@@ -104,5 +115,10 @@ public class Jerry : MonoBehaviour
 
     public void SetToStopSpeed() {
         rb.velocity = Vector2.zero;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        SetToStopSpeed();
     }
 }
