@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField]
-    private Transform destinationWayPoint;
+    private Transform destinationWayPoint = null;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

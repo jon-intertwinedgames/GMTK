@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject extremeDialogueOptions;
+    private GameObject extremeDialogueOptions = null;
 
     void Update()
     {

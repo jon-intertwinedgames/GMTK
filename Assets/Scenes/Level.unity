@@ -2696,7 +2696,7 @@ GameObject:
   - component: {fileID: 358791222}
   - component: {fileID: 358791221}
   m_Layer: 5
-  m_Name: Turn Left_button
+  m_Name: Move Left_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2720,7 +2720,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -175, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 225, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &358791221
 MonoBehaviour:
@@ -2992,7 +2992,7 @@ GameObject:
   - component: {fileID: 386203100}
   - component: {fileID: 386203099}
   m_Layer: 5
-  m_Name: Turn Right_text
+  m_Name: Move Right_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3036,7 +3036,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Turn Right
+  m_text: Move Right
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3676,7 +3676,7 @@ GameObject:
   - component: {fileID: 451856898}
   - component: {fileID: 451856897}
   m_Layer: 5
-  m_Name: Turn Left_text
+  m_Name: Move Left_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3720,7 +3720,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Turn Left
+  m_text: Move Left
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4891,7 +4891,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -175, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 225, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &811601316
 MonoBehaviour:
@@ -9636,7 +9636,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 175, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 225, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1550224740
 MonoBehaviour:
@@ -10215,11 +10215,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToSense: Player
   onlyTriggerOnce: 1
-  sfx: 0
-  audioOption:
-    volume: 1
-    delay: 0
-    willLoop: 1
+  delayBetweenClips: 0
+  audioClips:
+  - {fileID: 8300000, guid: 81f954fdfb3073b49a5e3ad440c6b52e, type: 3}
+  - {fileID: 8300000, guid: 009a72645a99b27428765c740dd1fa38, type: 3}
+  - {fileID: 8300000, guid: 32bb11e491a72e140b2703ee182e8164, type: 3}
 --- !u!61 &1791151686
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10876,7 +10876,7 @@ GameObject:
   - component: {fileID: 1919711683}
   - component: {fileID: 1919711682}
   m_Layer: 5
-  m_Name: Turn Right_button
+  m_Name: Move Right_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10900,7 +10900,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 175, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 225, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1919711682
 MonoBehaviour:

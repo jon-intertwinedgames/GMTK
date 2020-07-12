@@ -12,16 +12,19 @@ public class AudioTrigger : MonoBehaviour
     private bool onlyTriggerOnce = false;
 
     [SerializeField]
-    private SFX sfx;
+    private float delayBetweenClips = 0;
 
     [SerializeField]
-    private AudioOptions audioOption;
+    private AudioClip[] audioClips = null;
+
+    //[SerializeField]
+    //private AudioOptions audioOption;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == tagToSense)
-        {
-            AudioManager.PlaySFX(audioOption.Volume, audioOption.Delay, audioOption.WillLoop, SFX.RandomSound);
+        {            
+            AudioManager.instance.StartCoroutine(AudioManager.PlayAudioClipsSynchronously(audioClips, delayBetweenClips));
 
             if( onlyTriggerOnce ) {
                 Destroy(this);
