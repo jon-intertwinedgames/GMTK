@@ -117,6 +117,11 @@ public class Jerry : MonoBehaviour
         rb.velocity = Vector2.zero;
     }
 
+    public void Dies()
+    {
+        TVScreen.instance.ShowDeathImage();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         SetToStopSpeed();

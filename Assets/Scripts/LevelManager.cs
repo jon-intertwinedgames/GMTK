@@ -16,4 +16,24 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void Start()
+    {
+        //LoadCheckpoint();
+    }
+
+    public void SaveGame() {
+        PlayerPrefs.SetFloat("jerryXPos", Jerry.instance.transform.position.x);
+        PlayerPrefs.SetFloat("jerryYPos", Jerry.instance.transform.position.y);
+        PlayerPrefs.SetFloat("roomNum", currentRoomNum);
+    }
+
+    public void LoadCheckpoint() {
+        Vector2 jerryPos;
+        jerryPos.x = PlayerPrefs.GetFloat("jerryXPos");
+        jerryPos.y = PlayerPrefs.GetFloat("jerryYPos");
+        TVText.instance.ChangeCameraLabel(PlayerPrefs.GetInt("roomNum", 1));
+
+        Jerry.instance.transform.position = jerryPos;
+    }
 }

@@ -8,7 +8,7 @@ public class KillJerry : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Jerry"))
         {
-            print("Jerry dies.");
+            Jerry.instance.Dies();
         }
     }
 }

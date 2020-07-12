@@ -28,6 +28,8 @@ public class Door : MonoBehaviour
             if (nextRoom == CameraManager.instance.activeCamera.transform.parent.name) {
                 CameraManager.instance.activeCamera.GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = Jerry.instance.transform;
             }
+
+            LevelManager.instance.SaveGame();
         }
     }
 }
