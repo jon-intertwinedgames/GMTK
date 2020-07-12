@@ -11,7 +11,11 @@ public class LevelManager : MonoBehaviour
 
     private bool inCutscene = false;
 
-    public bool InCutscene { get => inCutscene; }
+    public bool InCutscene { 
+        get => inCutscene;
+    
+        set { inCutscene = value; }
+    }
 
     [SerializeField]
     private GameObject dialogueOptions;

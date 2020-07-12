@@ -362,6 +362,10 @@ public class AudioManager : MonoBehaviour
     /// <returns></returns>
     public static IEnumerator PlayAudioClipsSynchronously(AudioClip[] audioClips, float delayBetweenClips)
     {
+        if (LevelManager.instance.InCutscene)
+        {
+            LevelManager.instance.StartCutscene();
+        }
         foreach (AudioClip audioClip in audioClips) {
             AudioSource newAudioSource = CreateAudioSource();
             newAudioSource.clip = audioClip;
@@ -370,6 +374,11 @@ public class AudioManager : MonoBehaviour
             newAudioSource.Play();
             yield return new WaitForSecondsRealtime(audioClip.length + delayBetweenClips);
             Destroy(newAudioSource.gameObject);
+        }
+
+        if (LevelManager.instance.InCutscene)
+        {
+            LevelManager.instance.EndCutscene();
         }
     }
 

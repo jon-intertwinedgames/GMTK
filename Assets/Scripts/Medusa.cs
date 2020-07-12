@@ -18,6 +18,9 @@ public class Medusa : MonoBehaviour
     [SerializeField]
     private Transform jerry_trans = null;
 
+    [SerializeField]
+    private bool chase = false;
+
     private Rigidbody2D rb;
 
     private void Awake()
@@ -33,10 +36,15 @@ public class Medusa : MonoBehaviour
 
     private void Update()
     {
-        Vector2 direction = jerry_trans.position - transform.position;
+        if (chase)
+        {
+            Vector2 direction = jerry_trans.position - transform.position;
 
-        direction = direction.normalized * speed;
+            direction = direction.normalized * speed;
 
-        rb.velocity = direction;
+            rb.velocity = direction;
+        } else {
+            rb.velocity = Vector2.zero;
+        }
     }
 }

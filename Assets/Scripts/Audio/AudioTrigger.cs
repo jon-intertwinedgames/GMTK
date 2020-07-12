@@ -12,6 +12,9 @@ public class AudioTrigger : MonoBehaviour
     private bool onlyTriggerOnce = false;
 
     [SerializeField]
+    private bool isCutScene = false;
+
+    [SerializeField]
     private float delayBetweenClips = 0;
 
     [SerializeField]
@@ -23,11 +26,12 @@ public class AudioTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == tagToSense)
-        {            
+        {
+            LevelManager.instance.InCutscene = isCutScene;
             AudioManager.instance.StartCoroutine(AudioManager.PlayAudioClipsSynchronously(audioClips, delayBetweenClips));
 
             if( onlyTriggerOnce ) {
-                Destroy(this);
+                Destroy(gameObject);
             }
         }
     }

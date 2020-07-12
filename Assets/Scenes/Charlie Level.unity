@@ -2038,9 +2038,8 @@ GameObject:
   - component: {fileID: 278905954}
   - component: {fileID: 278905953}
   - component: {fileID: 278905952}
-  - component: {fileID: 278905951}
-  m_Layer: 0
-  m_Name: Audio Trigger (1)
+  m_Layer: 9
+  m_Name: Cutscene Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2060,21 +2059,6 @@ Transform:
   m_Father: {fileID: 1224828835}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &278905951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278905949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d81af3c2c83cc645a1286bdecbc6b46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directionJerryMoves: 1
-  timeTillJerryActs: 1.5
-  onlyTriggerOnce: 1
 --- !u!114 &278905952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2089,9 +2073,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToSense: Player
   onlyTriggerOnce: 1
+  isCutScene: 1
   delayBetweenClips: 0
   audioClips:
-  - {fileID: 8300000, guid: fb38d5c35e6bc3840894890943723084, type: 3}
+  - {fileID: 8300000, guid: e0fa199fcb735db43a1a116256cfc24e, type: 3}
 --- !u!61 &278905953
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2597,6 +2582,7 @@ GameObject:
   - component: {fileID: 330182052}
   - component: {fileID: 330182054}
   - component: {fileID: 330182055}
+  - component: {fileID: 330182056}
   m_Layer: 10
   m_Name: Medusa
   m_TagString: Untagged
@@ -2643,7 +2629,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6944a2fed6fe94846a4b420c9fa829c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 130a4411238e39840ab4f4a2b2a46377, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2662,8 +2648,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330182049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.26, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.3, z: 1}
+  m_LocalPosition: {x: 1.774, y: -0.935, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -2718,18 +2704,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.49731445, y: 0.12741613}
+  m_Offset: {x: 0.032929853, y: -0.00000023841858}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.8, y: 7.2}
+    oldSize: {x: 1.5, y: 2.4}
     newSize: {x: 12.8, y: 7.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.849121, y: 5.414835}
+  m_Size: {x: 0.83535063, y: 2.1858146}
   m_EdgeRadius: 0
 --- !u!114 &330182055
 MonoBehaviour:
@@ -2743,6 +2729,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3797e5769df0143489b9c453fcb86fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &330182056
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330182049}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b00e0ca600ec014491a810dca111bda, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &347468787
 GameObject:
   m_ObjectHideFlags: 0
@@ -5140,7 +5145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689332474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.75, y: 0, z: -10}
+  m_LocalPosition: {x: 100, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5278,7 +5283,7 @@ RectTransform:
   m_Children:
   - {fileID: 54058508}
   m_Father: {fileID: 988302193}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5418,6 +5423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 787383230}
   - component: {fileID: 787383231}
+  - component: {fileID: 787383232}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -5453,6 +5459,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentRoomNum: 1
   dialogueOptions: {fileID: 909119658}
+--- !u!114 &787383232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787383229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9e96c457daf834c8ea5b2f8d5290c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &811601314
 GameObject:
   m_ObjectHideFlags: 0
@@ -6825,8 +6843,9 @@ RectTransform:
   m_Children:
   - {fileID: 170692441}
   - {fileID: 89964643}
+  - {fileID: 1471150717}
   m_Father: {fileID: 988302193}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7266,7 +7285,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 604388161}
-  - {fileID: 1471150717}
   - {fileID: 909119659}
   - {fileID: 728805893}
   m_Father: {fileID: 0}
@@ -9757,12 +9775,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1572167581}
-  m_Father: {fileID: 988302193}
-  m_RootOrder: 1
+  m_Father: {fileID: 909119659}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 297, y: -398}
+  m_AnchoredPosition: {x: 437, y: -10}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471150718
@@ -10834,6 +10852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToSense: Player
   onlyTriggerOnce: 1
+  isCutScene: 0
   delayBetweenClips: 0
   audioClips:
   - {fileID: 8300000, guid: fb38d5c35e6bc3840894890943723084, type: 3}
