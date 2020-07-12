@@ -20,5 +20,7 @@ public class SenseJerry : MonoBehaviour
         {
             Medusa.instance.speed = Medusa.instance.FastSpeed;
         }
+
+        transform.position = Medusa.instance.transform.position;
     }
 }
