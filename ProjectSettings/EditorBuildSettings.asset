@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 2f1a7374b47495d4797bd93d385c6a91
   - enabled: 1
-    path: Assets/Scenes/Level.unity
-    guid: 0c84c9e79feb9c3439ecfeef164b2e4c
+    path: Assets/Scenes/Charlie Level.unity
+    guid: 5f1990c5a4891584d9ff227849685b1d
+  - enabled: 1
+    path: Assets/Scenes/Jonathan Level.unity
+    guid: c2dcd5bc709d6e24fb4acdf8372d060a
   - enabled: 1
     path: Assets/Scenes/Lose.unity
     guid: cb3a079171fc66849b187a3b304f0161
