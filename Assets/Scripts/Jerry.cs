@@ -8,9 +8,14 @@ public class Jerry : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField]
+    private Sprite[] sprites;
+
+    private SpriteRenderer sr;
+
+    [SerializeField]
     private float normalSpeed = 5, runningSpeed = 8;
 
-    private Direction direction = Direction.Up;
+    private Direction direction;
     public Direction DirectionProp {
         get => direction;
 
@@ -18,7 +23,19 @@ public class Jerry : MonoBehaviour
             if( direction != value) {
                 direction = value;
 
-                transform.rotation = Quaternion.Euler(0, 0, (int)direction * 90);
+                if(direction == Direction.Up) {
+                    sr.sprite = sprites[0];
+                } else if( direction == Direction.Left || direction == Direction.Right) {
+                    sr.sprite = sprites[1];
+                } else {
+                    sr.sprite = sprites[2];
+                }
+
+                if(direction == Direction.Left) {
+                    sr.flipX = true;
+                } else {
+                    sr.flipX = false;
+                }
             }
         }
     }
@@ -32,6 +49,9 @@ public class Jerry : MonoBehaviour
         }
 
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+
+        DirectionProp = Direction.Down;
     }
 
     public void ChangeDirection(string direction)
