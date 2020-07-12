@@ -12,6 +12,7 @@ public class Medusa : MonoBehaviour
     public float DefaultSpeed { get => defaultSpeed; }
     public float FastSpeed { get => fastSpeed; }
 
+    [SerializeField]
     public float speed;
 
     [SerializeField]

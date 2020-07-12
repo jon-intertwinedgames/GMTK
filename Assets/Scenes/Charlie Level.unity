@@ -10666,6 +10666,7 @@ GameObject:
   - component: {fileID: 1791151687}
   - component: {fileID: 1791151686}
   - component: {fileID: 1791151685}
+  - component: {fileID: 1791151690}
   m_Layer: 0
   m_Name: Audio Trigger
   m_TagString: Untagged
@@ -10689,9 +10690,7 @@ MonoBehaviour:
   onlyTriggerOnce: 1
   delayBetweenClips: 0
   audioClips:
-  - {fileID: 8300000, guid: 81f954fdfb3073b49a5e3ad440c6b52e, type: 3}
-  - {fileID: 8300000, guid: 42ff5078039e02343b535b57f0b3c924, type: 3}
-  - {fileID: 8300000, guid: 32bb11e491a72e140b2703ee182e8164, type: 3}
+  - {fileID: 8300000, guid: fb38d5c35e6bc3840894890943723084, type: 3}
 --- !u!61 &1791151686
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10779,6 +10778,21 @@ Transform:
   m_Father: {fileID: 1224828835}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1791151690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791151684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d81af3c2c83cc645a1286bdecbc6b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionJerryMoves: 1
+  timeTillJerryActs: 1.5
+  onlyTriggerOnce: 1
 --- !u!1 &1816067391
 GameObject:
   m_ObjectHideFlags: 0
