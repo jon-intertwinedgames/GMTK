@@ -1,4 +1,4 @@
 ﻿public enum SFX
 {
-   RandomSound
+   TVClick
 }

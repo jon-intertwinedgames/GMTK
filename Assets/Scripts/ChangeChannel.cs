@@ -26,5 +26,7 @@ public class ChangeChannel : MonoBehaviour
         }
 
         CameraManager.instance.activeCamera.SetActive(true);
+
+        AudioManager.PlayOneShotSFX(1, 0, SFX.TVClick);
     }
 }

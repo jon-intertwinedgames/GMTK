@@ -8,7 +8,7 @@ public class Jerry : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField]
-    private Sprite[] sprites;
+    private Sprite[] sprites = new Sprite[3];
 
     private SpriteRenderer sr;
 

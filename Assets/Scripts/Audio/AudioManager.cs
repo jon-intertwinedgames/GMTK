@@ -51,7 +51,7 @@ public class AudioManager : MonoBehaviour
 
     private void InitializeSFX()
     {
-        sfxDictionary.Add(SFX.RandomSound, Resources.Load<AudioClip>("Audio/SFX/Random Sound"));
+        sfxDictionary.Add(SFX.TVClick, Resources.Load<AudioClip>("Audio/SFX/TV Click"));
     }
 
     private void InitializeDialogue() {

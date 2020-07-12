@@ -5,10 +5,10 @@ using UnityEngine;
 public class MedusaCommand : MonoBehaviour
 {
     [SerializeField]
-    private Direction directionJerryMoves;
+    private Direction directionJerryMoves = Direction.Up;
     
     [SerializeField]
-    private float timeTillJerryActs;
+    private float timeTillJerryActs = 0;
 
     [SerializeField]
     private bool onlyTriggerOnce = false;

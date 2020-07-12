@@ -6,7 +6,15 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
+    [HideInInspector]
     public int currentRoomNum = 1;
+
+    private bool inCutscene = false;
+
+    public bool InCutscene { get => inCutscene; }
+
+    [SerializeField]
+    private GameObject dialogueOptions;
 
     private void Awake()
     {
@@ -35,5 +43,16 @@ public class LevelManager : MonoBehaviour
         TVText.instance.ChangeCameraLabel(PlayerPrefs.GetInt("roomNum", 1));
 
         Jerry.instance.transform.position = jerryPos;
+    }
+
+    public void StartCutscene() {
+        inCutscene = true;
+        dialogueOptions.SetActive(false);
+        Jerry.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    }
+
+    public void EndCutscene() {
+        inCutscene = false;
+        dialogueOptions.SetActive(true);
     }
 }

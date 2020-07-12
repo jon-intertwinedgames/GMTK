@@ -7,7 +7,7 @@ public class TVScreen : MonoBehaviour
     public static TVScreen instance;
 
     [SerializeField]
-    private GameObject deathImage;
+    private GameObject deathImage = null;
 
     private void Awake()
     {
