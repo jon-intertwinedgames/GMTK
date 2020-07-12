@@ -26,7 +26,6 @@ public class CameraManager : MonoBehaviour
         foreach(GameObject camera in allCameras) {
             if ( camera != activeCamera ) {
                 camera.SetActive(false);
-                camera.GetComponent<CinemachineVirtualCamera>().Follow = GameObject.FindGameObjectWithTag("Player").transform;
             }
         }
     }
