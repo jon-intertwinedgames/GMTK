@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Medusa : MonoBehaviour
 {
+    public static Medusa instance;
+
     [SerializeField]
-    private float speed = 3;
+    private float defaultSpeed = 3, fastSpeed = 20;
+
+    public float DefaultSpeed { get => defaultSpeed; }
+    public float FastSpeed { get => fastSpeed; }
+
+    public float speed;
 
     [SerializeField]
     private Transform jerry_trans = null;
@@ -14,6 +21,12 @@ public class Medusa : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -28,7 +41,7 @@ public class Medusa : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Living"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Jerry"))
         {
             print("Jerry dies.");
         }
