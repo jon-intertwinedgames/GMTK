@@ -2589,7 +2589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &330182050
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2670,6 +2670,7 @@ MonoBehaviour:
   fastSpeed: 20
   speed: 3
   jerry_trans: {fileID: 1270022956}
+  chase: 0
 --- !u!50 &330182053
 Rigidbody2D:
   serializedVersion: 4
