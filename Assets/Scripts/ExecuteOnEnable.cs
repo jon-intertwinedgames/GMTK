@@ -8,11 +8,8 @@ public class ExecuteOnEnable : MonoBehaviour
     private event Action methodsToExecute;
 
     private void OnEnable()
-    {
-        if(methodsToExecute != null)
-        {
-            methodsToExecute();
-        }
+    {        
+        methodsToExecute?.Invoke();        
     }
 
     public void AddMethodsToExecute( params Action[] methods) {

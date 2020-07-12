@@ -8,7 +8,7 @@ public class Medusa : MonoBehaviour
     private float speed = 3;
 
     [SerializeField]
-    private Transform jerry_trans;
+    private Transform jerry_trans = null;
 
     private Rigidbody2D rb;
 

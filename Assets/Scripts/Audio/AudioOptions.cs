@@ -11,15 +11,20 @@ public struct AudioOptions
     [SerializeField]
     private float delay;
 
+    [SerializeField]
+    private bool willLoop;
+
     public Coroutine sfxCoroutine;
 
     public float Volume { get => volume; }
     public float Delay { get => delay; }
+    public bool WillLoop { get => willLoop; }
 
-    public AudioOptions(float volume, float delay, Coroutine sfxCoroutine)
+    public AudioOptions(float volume, float delay, bool willLoop, Coroutine sfxCoroutine)
     {
         this.volume = volume;
         this.delay = delay;
+        this.willLoop = willLoop;
         this.sfxCoroutine = sfxCoroutine;
     }
 }
